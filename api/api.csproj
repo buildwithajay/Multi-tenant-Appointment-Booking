@@ -21,16 +21,6 @@
 
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="src/API/" />
-    <Folder Include="src/API/Middlewares/" />
-    <Folder Include="src/Application/Services/" />
-    <Folder Include="src/Domain/" />
-    <Folder Include="src/Domain/Enums/" />
-    <Folder Include="src/Domain/Interfaces/" />
-    <Folder Include="src/Infrastructure/Repositories/" />
-    <Folder Include="src\Infrastructure\Data\Extensions\" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="src/appsettings.json" CopyToOutputDirectory="PreserveNewest" />
