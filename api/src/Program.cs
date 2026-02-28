@@ -70,15 +70,12 @@ builder.Services.AddCors(options =>
     {
        policy
     .WithOrigins(
-        "https://jolly-sea-00f9eb200.1.azurestaticapps.net",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:4173",
-        "http://127.0.0.1:4173"
+        "https://jolly-sea-00f9eb200.1.azurestaticapps.net", "http://localhost:5173"
     )
     .AllowAnyHeader()
     .AllowAnyMethod()
-    .AllowCredentials();
+    .AllowCredentials()
+    .SetIsOriginAllowedToAllowWildcardSubdomains();
     })
 );
 builder.Services.AddEndpointsApiExplorer();
