@@ -50,10 +50,6 @@ builder.Services.AddAuthentication(option =>
       ValidAudience = builder.Configuration["Jwt:Audience"],
       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
    };
-}).AddGoogle(options =>
-{
-   options.ClientId = builder.Configuration["Google:ClientId"]!;
-   options.ClientSecret = builder.Configuration["Google:ClientSecret"]!;
 });
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
@@ -80,7 +76,8 @@ builder.Services.AddCors(options =>
         if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps)
             return false;
         return uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase) ||
-               uri.Host.EndsWith(".localhost", StringComparison.OrdinalIgnoreCase);
+               uri.Host.EndsWith(".localhost", StringComparison.OrdinalIgnoreCase) ||
+               uri.Host.Equals("jolly-sea-00f9eb200.1.azurestaticapps.net", StringComparison.OrdinalIgnoreCase);
     })
     .AllowAnyHeader()
     .AllowAnyMethod()
