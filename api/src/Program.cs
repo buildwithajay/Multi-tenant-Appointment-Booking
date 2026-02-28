@@ -69,20 +69,16 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
        policy
-    .SetIsOriginAllowed(origin =>
-    {
-        if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri))
-            return false;
-        if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps)
-            return false;
-        return uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase) ||
-               uri.Host.EndsWith(".localhost", StringComparison.OrdinalIgnoreCase) ||
-               uri.Host.Equals("jolly-sea-00f9eb200.1.azurestaticapps.net", StringComparison.OrdinalIgnoreCase);
-    })
+    .WithOrigins(
+        "https://jolly-sea-00f9eb200.1.azurestaticapps.net",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:4173",
+        "http://127.0.0.1:4173"
+    )
     .AllowAnyHeader()
     .AllowAnyMethod()
-    .AllowCredentials()
-    .SetIsOriginAllowedToAllowWildcardSubdomains();
+    .AllowCredentials();
     })
 );
 builder.Services.AddEndpointsApiExplorer();
