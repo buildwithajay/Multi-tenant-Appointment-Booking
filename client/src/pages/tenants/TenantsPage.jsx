@@ -103,7 +103,7 @@ export default function TenantsPage() {
         }
     };
 
-    const getBookingUrl = (slug) => `http://localhost:5173/${slug}`;
+    const getBookingUrl = (slug) => `https://jolly-sea-00f9eb200.1.azurestaticapps.net/${slug}`;
     const copyBookingUrl = async (slug) => {
         const url = getBookingUrl(slug);
         try {
