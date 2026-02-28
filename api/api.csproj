@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultItems>false</EnableDefaultItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,12 +24,12 @@
 
 
   <ItemGroup>
-    <None Update="src/appsettings.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="src/appsettings.Development.json" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Include="src/**/*.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="**/*.resx" />
+    <None Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="appsettings.Development.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
