@@ -126,10 +126,11 @@ if (!app.Environment.IsDevelopment())
 {
    app.UseHttpsRedirection();
 }
+app.UseRouting();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
+app.MapControllers().RequireCors("AllowFrontend");
 app.MapFallback(async context =>
 {
    context.Response.StatusCode = StatusCodes.Status404NotFound;
