@@ -39,7 +39,7 @@ export default function DashboardLayout({ children }) {
         <div className="flex flex-col h-full">
             {/* Logo */}
             <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-800">
-                <AppointlyLogo className="h-10 w-auto" />
+                <AppointlyLogo className="h-12 w-auto" />
             </div>
 
             {/* Nav */}
