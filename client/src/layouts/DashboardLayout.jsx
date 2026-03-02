@@ -6,6 +6,7 @@ import {
     LogOut, User, ChevronDown, Bell, Settings, CalendarDays, UserRound, ChartNoAxesColumn
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import AppointlyLogo from '../components/AppointlyLogo';
 
 const navLinks = [
     { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -38,13 +39,7 @@ export default function DashboardLayout({ children }) {
         <div className="flex flex-col h-full">
             {/* Logo */}
             <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-800">
-                <div className="bg-blue-600 rounded-xl p-2">
-                    <Building2 className="text-white" size={22} />
-                </div>
-                <div>
-                    <p className="text-white font-bold text-base leading-none">BookingHub</p>
-                    <p className="text-slate-400 text-xs mt-0.5">Multi-tenant Platform</p>
-                </div>
+                <AppointlyLogo className="h-10 w-auto" />
             </div>
 
             {/* Nav */}
