@@ -258,11 +258,11 @@ export default function TenantHomePage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <select required value={form.serviceId} onChange={(e) => setForm({ ...form, serviceId: e.target.value, staffId: '' })} className="border border-slate-300 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option value="">Select service</option>
-                                {catalog.services.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+                                {(catalog.services ?? []).map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
                             </select>
                             <select required value={form.staffId} onChange={(e) => setForm({ ...form, staffId: e.target.value })} className="border border-slate-300 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option value="">Select staff</option>
-                                {availableStaff.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+                                {(availableStaff ?? []).map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
                             </select>
                         </div>
 
