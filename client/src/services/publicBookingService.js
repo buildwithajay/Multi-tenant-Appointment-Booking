@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const publicApi = axios.create({
-    baseURL: '/api',
+    baseURL: 'https://appointly-cnb6bkg4b3axeddj.centralindia-01.azurewebsites.net/api',
     headers: { 'Content-Type': 'application/json' },
 });
 
