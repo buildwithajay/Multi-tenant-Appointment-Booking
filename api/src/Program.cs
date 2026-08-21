@@ -70,7 +70,7 @@ builder.Services.AddCors(options =>
     {
        policy
     .WithOrigins(
-        "https://jolly-sea-00f9eb200.1.azurestaticapps.net", "http://localhost:5173"
+        "https://appointly.paudelajay.com.np"
     )
     .AllowAnyHeader()
     .AllowAnyMethod()
