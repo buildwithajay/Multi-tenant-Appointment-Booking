@@ -6,7 +6,6 @@ RUN dotnet restore api.csproj
 
 COPY src ./src
 COPY appsettings.json ./
-COPY appsettings.Development.json ./
 RUN dotnet publish api.csproj -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
